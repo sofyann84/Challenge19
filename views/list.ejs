@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challlenge19</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .margin {
+            margin: 10px 50px 10px 50px;
+        }
+    </style>
+</head>
+<body class="margin">
+    <h2>BREAD (browse, read , edit, add, delete)</h2>
+    <h3> Filters</h3>
+    <form>
+        <div class="form-group row">
+          <label for="id" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input placeholder="ID" class="form-control" id="" name="id" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="string" class="col-sm-2 col-form-label">String</label>
+          <div class="col-sm-10">
+            <input placeholder="String" class="form-control" id="" name="string">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="integer" class="col-sm-2 col-form-label">Integer</label>
+            <div class="col-sm-10">
+              <input placeholder="Integer" class="form-control" id="" name="integer">
+            </div>
+        </div>
+          <div class="form-group row">
+            <label for="float" class="col-sm-2 col-form-label">Float</label>
+            <div class="col-sm-10">
+              <input placeholder="Float"  class="form-control" id="" name="float">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+              <input placeholder="date" type="date" class="form-control" id="" name="float">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="boolean" class="col-sm-2 col-form-label">Boolean</label>
+            <div class="col-sm-10">
+              <select class="custom-select" id="inputGroupSelect02" name="boolean">
+                <option selected disabled>Choose the boolean..</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">search</button> 
+          
+          <br> <br>
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+          
+          <br><br>
+          
+          <table class="table table-striped">
+            <thead>
+            <tr >
+                <th scope="col">ID</th>
+                <th scope="col">STRING</th>
+                <th scope="col">INTEGER</th>
+                <th scope="col">FLOAT</th>
+                <th scope="col">DATE</th>
+                <th scope="col">BOOLEAN</th>
+                <th scope="col">ACTION</th>
+            </tr>
+          </thead>
+            <% data.forEach((item, index) => {  %>  
+            <tr scope="row">
+                <th scope= "row"> <%= index + 1 %> </th>
+                <td> <%= item.string %> </td>
+                <td> <%= item.integer %> </td>
+                <td> <%= item.float %> </td>
+                <td> <%= item.date %> </td>
+                <td> <%= item.boolean %> </td>
+                <td> 
+                  <button class="btn btn-success"> <a href="/edit/<%=index%>" style="color: white;"  > edit </a></button> 
+                  <button class="btn btn-danger"> <a href="/delete/<%= index%>" style="color: white;"> delete </a></button></td>
+            </tr>
+     <%   }) %>
+        </table>
+        <br> <br>
+        <a href="/add" <button class="btn btn-success">Add </button> </a>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
